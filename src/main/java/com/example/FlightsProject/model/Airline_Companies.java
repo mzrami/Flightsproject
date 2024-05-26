@@ -13,10 +13,13 @@ public class Airline_Companies {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger id ;
+    private long id ;
 
     @Column(unique = true)
-    private String Company_Name;
+    private String companyname;
+
+
+    private Airports airport_id ;
 
     @Column(unique = true)
     private String username;
@@ -24,7 +27,7 @@ public class Airline_Companies {
     private String password;
 
     @OneToMany
-    @JoinColumn (name= "Airline_Company_id")
+    @JoinColumn (name= "airline_company_id")
     List<Flights> flightsList = new ArrayList<>();
 
     public String getUsername(String username) {

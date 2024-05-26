@@ -13,22 +13,17 @@ public class Airports {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id ;
+    private Long id ;
 
     @Column(unique = true)
-    private String Airport_Name ;
+    private String airportname ;
 
     @Column(unique = true)
-    private String Country_Name ;
+    private String countryname ;
 
-    @ManyToMany
-    @JoinColumn (name= "Airport_id")
-    List<Airline_Companies> airline_companiesList = new ArrayList<>();
 
-    @ManyToMany
-    @JoinColumn (name= "Origin_Airport_id")
-    @JoinColumn (name= "Destination_Airport_id")
-    List<Flights> flightsList = new ArrayList<>();
+
+
 
 
 

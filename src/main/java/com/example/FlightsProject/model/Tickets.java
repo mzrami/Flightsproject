@@ -16,4 +16,6 @@ public class Tickets {
     private BigInteger id ;
 
 
+    private Flights flights ;
+
 }

@@ -15,10 +15,16 @@ public class Flights {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id ;
-    private Airports origin_country_id ;
-    private Airports destination_country_id ;
+    private Long id ;
 
+    @ManyToOne
+    private Airports origin_airport_id ;
+
+    @ManyToOne
+    private Airports destination_airport_id ;
+
+    @ManyToOne
+    private Airline_Companies airline_company_id ;
 
     @DateTimeFormat ( pattern = "MM-dd-yyyy")
     private LocalDate departure_time ;
