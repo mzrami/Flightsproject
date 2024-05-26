@@ -15,15 +15,18 @@ public class Flights {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger id ;
+    private long id ;
+    private Airports origin_country_id ;
+    private Airports destination_country_id ;
+
 
     @DateTimeFormat ( pattern = "MM-dd-yyyy")
-    private LocalDate Departure_Time ;
+    private LocalDate departure_time ;
 
     @DateTimeFormat ( pattern = "MM-dd-yyyy")
-    private LocalDate Landing_Time ;
+    private LocalDate landing_time ;
 
-    private int Remaining_Tickets ;
+    private int remaining_tickets ;
 
     @OneToMany
     @JoinColumn(name= "Flight_id" , unique = true)
