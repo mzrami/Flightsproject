@@ -1,9 +1,6 @@
 package com.example.FlightsProject.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigInteger;
@@ -13,9 +10,10 @@ public class Tickets {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger id ;
+    private BigInteger id;
 
-
-    private Flights flights ;
 
 }
+
+
+

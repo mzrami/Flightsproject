@@ -4,27 +4,26 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.math.BigInteger;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @Entity
-public class Flights {
+public class Flight {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id ;
 
     @ManyToOne
-    private Airports origin_airport_id ;
+    private Airports origin_airport ;
 
     @ManyToOne
-    private Airports destination_airport_id ;
+    private Airports destination_airport ;
 
     @ManyToOne
-    private Airline_Companies airline_company_id ;
+    private Airline_Companies airline_company;
 
     @DateTimeFormat ( pattern = "MM-dd-yyyy")
     private LocalDate departure_time ;
@@ -34,8 +33,8 @@ public class Flights {
 
     private int remaining_tickets ;
 
-    @OneToMany
-    @JoinColumn(name= "Flight_id" , unique = true)
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name= "Flight_id")
     List<Tickets> ticketsList = new ArrayList<>();
 
 }

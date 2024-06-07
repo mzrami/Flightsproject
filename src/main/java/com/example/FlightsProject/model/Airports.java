@@ -15,11 +15,11 @@ public class Airports {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id ;
 
-    @Column(unique = true)
-    private String airportname ;
+   // @Column(unique = true)
+    private String AirportName ;
 
-    @Column(unique = true)
-    private String countryname ;
+ //   @Column(unique = true)
+    private String CountryName ;
 
 
 

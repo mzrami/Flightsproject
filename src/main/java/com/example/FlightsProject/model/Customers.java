@@ -18,24 +18,25 @@ public class Customers {
     private String Last_Name ;
     private String Address ;
 
-    @Column(unique = true)
+   // @Column(unique = true)
     private String Phone_No ;
 
-    @Column(unique = true)
+   // @Column(unique = true)
     private String Credit_Card_No ;
 
     private String username;
     private String password;
 
-    @OneToMany
-    @JoinColumn(name= "Customer_id" , unique = true)
-    List<Tickets> ticketsList = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name= "Customer_id")
+    List<Tickets> ticketsList = new ArrayList<>(); // ticket list in case the same customer ordered more than one ticket
 
     public String getUsername(String username) {
         return this.username= username;
     }
 
     public String getPassword(String password) {
+
         return this.password = password;
     }
 
