@@ -12,15 +12,15 @@ public class Airline_Companies {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id ;
+    private Long id ;
 
-    @Column(unique = true)
+
     private String CompanyName;
 
     @ManyToOne
-    private Airports airport_id ;
+    private Airports airport ;
 
-    @Column(unique = true)
+
     private String Username;
 
     private String Password;

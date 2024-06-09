@@ -12,16 +12,16 @@ public class Customers {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger id ;
+    private Long id ;
 
     private String First_Name ;
     private String Last_Name ;
     private String Address ;
 
-   // @Column(unique = true)
+
     private String Phone_No ;
 
-   // @Column(unique = true)
+
     private String Credit_Card_No ;
 
     private String username;

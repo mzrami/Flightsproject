@@ -10,7 +10,7 @@ public class Tickets {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger id;
+    private Long id;
 
 
 }
