@@ -1,4 +1,4 @@
-package com.example.FlightsProject.repositpories;
+package com.example.FlightsProject.repositories;
 
 import com.example.FlightsProject.model.Flight;
 import org.springframework.data.repository.CrudRepository;

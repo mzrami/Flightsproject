@@ -13,17 +13,17 @@ import java.util.List;
 public class Flight {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id ;
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id ;
 
     @ManyToOne
-    private Airports origin_airport ;
+    private Airport origin_airport ;
 
     @ManyToOne
-    private Airports destination_airport ;
+    private Airport destination_airport ;
 
     @ManyToOne
-    private Airline_Companies airline_company;
+    private Airline_Company airline_company;
 
     @DateTimeFormat ( pattern = "MM-dd-yyyy")
     private LocalDate departure_time ;
