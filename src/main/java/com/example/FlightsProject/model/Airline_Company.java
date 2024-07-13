@@ -19,12 +19,11 @@ public class Airline_Company {
     private Long id;
 
 
-    private String CompanyName;
+    private String companyName;
 
     @ManyToOne
     private Airport airport;
 
-   // private String CompanyCode;
 
 
     private String Username;
@@ -37,9 +36,10 @@ public class Airline_Company {
 
 
 
-    public Airline_Company(String companyName, String username, String password) {
+    public Airline_Company(String companyName,Airport airport, String username, String password) {
 
-        this.CompanyName = companyName;
+        this.airport = airport ;
+        this.companyName = companyName;
         this.Username = username;
         this.Password = password;
     }

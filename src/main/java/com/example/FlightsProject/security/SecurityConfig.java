@@ -24,7 +24,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf-> csrf.disable()).authorizeRequests(authorize -> authorize
-                .requestMatchers("/design", "/orders/**").hasAnyAuthority("USER","ADMIN","OIDC_USER","OAUTH2_USER")
+                .requestMatchers("/design", "/**").hasAnyAuthority("USER","ADMIN","OIDC_USER","OAUTH2_USER")
                 .requestMatchers("/adminpanel").hasRole("ADMIN")
                 .requestMatchers("/", "/**").permitAll())
 //                .oauth2Login(oauth-> oauth.loginPage("/login"))//default link provided by spring

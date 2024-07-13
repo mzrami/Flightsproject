@@ -8,26 +8,27 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@AllArgsConstructor
+//@AllArgsConstructor
 @NoArgsConstructor
 //@Table(uniqueConstraints = {@UniqueConstraint(columnNames = "AirportCode") })
 public class Airport {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id ;
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id ;
 
 
-    private String AirportCode ;
+   // private String AirportCode ;
 
 
     private String AirportName ;
 
     private String CountryName ;
 
-    public Airport( String airportCode, String airportName , String countryName) {
+    public Airport( String id, String airportName , String countryName) {
 
-        this.AirportCode = airportCode;
+        //this.AirportCode = airportCode;
+        this.id = id ;
         this.AirportName = airportName;
         this.CountryName = countryName;
     }

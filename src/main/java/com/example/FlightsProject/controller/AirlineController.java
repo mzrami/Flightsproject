@@ -13,23 +13,23 @@ import java.util.List;
 @Controller
 public class AirlineController {
 
-    @Autowired
-    AirlineRepository airlineRepository;
-
-    public static List<Airline_Company> airlineCompanyList = Arrays.asList();
-
-    @Bean
-    public ApplicationRunner preloadData() {
-
-        return args -> {
-            airlineRepository.save(new Airline_Company("EL-AL","ELALADMIN","ADMIN"));
-           // airlineRepository.save(new Airline_Company("ALT","ALITALIA","MXP","ALTADMIN","ADMIN"));
-         //   airlineRepository.save(new Airline_Company("LAX", "Los Angeles", "U.S.A"));
-          //  airlineRepository.save(new Airline_Company("TRA", "Turkish Airline","IST", "TURKEY"));
-
-
-        };
-    }
+//    @Autowired
+//    AirlineRepository airlineRepository;
+//
+//    public static List<Airline_Company> airlineCompanyList = Arrays.asList();
+//
+//    @Bean
+//    public ApplicationRunner preloadData1() {
+//
+//        return args -> {
+//            airlineRepository.save(new Airline_Company("EL-AL","ELALADMIN","ADMIN"));
+//           // airlineRepository.save(new Airline_Company("ALT","ALITALIA","MXP","ALTADMIN","ADMIN"));
+//         //   airlineRepository.save(new Airline_Company("LAX", "Los Angeles", "U.S.A"));
+//          //  airlineRepository.save(new Airline_Company("TRA", "Turkish Airline","IST", "TURKEY"));
+//
+//
+//        };
+//    }
 
 
 }
