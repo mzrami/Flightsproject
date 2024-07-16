@@ -47,17 +47,13 @@ public class LoadDataInRunning {
             Airline_Company British ;
 
             List<Airline_Company> airlineCompanyList = Arrays.asList(
-                    ELAL     = new Airline_Company("EL-AL",airport1, "ELALADMIN", "ADMINel"),
-                    ALITALIA = new Airline_Company("ALITALIA",airport2, "ALTADMIN", "ADMINalt"),
-                    Turkish  = new Airline_Company("Turkish Airline",airport3, "TRADMIN", "ADMINtr"),
-                    British  =  new Airline_Company("British Airways",airport4, "BRADMIN", "ADMINba")
+                       ELAL     =  new Airline_Company("EL-AL",airport1, "ELALADMIN", "ADMINel"),
+                       ALITALIA = new Airline_Company("ALITALIA",airport2, "ALTADMIN", "ADMINalt"),
+                       Turkish  = new Airline_Company("Turkish Airline",airport3, "TRADMIN", "ADMINtr"),
+                       British  =  new Airline_Company("British Airways",airport4, "BRADMIN", "ADMINba")
             );
 
-           // List<Flight> flightList = Arrays.asList(
 
-                    flightrepo.save(new Flight("EJ473",airport1,airport3,ELAL,LocalDateTime.parse("07-20-2024T20:00:00"),LocalDateTime.parse("07-21-2024T20:00:00"),100));
-                    flightrepo.save(new Flight("FG221",airport4,airport2,ALITALIA, LocalDateTime.parse("07-15-2024T15:30:00"),LocalDateTime.parse("07-15-2024T20:00:00"),120));
-          //  );
             // save airline company
             for (Airline_Company airlineCompany : airlineCompanyList) {
                 if (airlineRepository.findByCompanyName(airlineCompany.getCompanyName()).isEmpty()) {
@@ -67,6 +63,12 @@ public class LoadDataInRunning {
                 }
             }
 
+            flightrepo.save(new Flight("EG234",airport1,airport3,ELAL,
+                    LocalDateTime.parse("2024-07-20T20:00:00"),
+                    LocalDateTime.parse("2024-07-21T01:00:00"),100));
+            flightrepo.save(new Flight("FY669",airport4,airport2,ALITALIA,
+                    LocalDateTime.parse("2024-07-15T15:30:00"),
+                    LocalDateTime.parse("2024-07-15T20:00:00"),120));
 
         };
     }

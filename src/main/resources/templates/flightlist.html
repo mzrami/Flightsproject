@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<table>
+
+    <thead>
+    <tr>
+    <th>DEPARTURE DATE/TIME</th>
+    <th>FROM</th>
+    <th>TO</th>
+    <th>FLIGHT No.</th>
+    <th>AIRLINE</th>
+    </tr>
+    </thead>
+</table>
+<body>
+
+<tr th:each="flight:${flights}">
+    <td th:text="${flight.departure_date}"/>
+    <td th:text="${flight.origin_airport.AirportName}"/>
+    <td th:text="${flight.destination_airport.AirportName}"/>
+    <td th:text="${flight.id}"/>
+    <td th:text="${flight.airline_company.companyName}"/>
+    </td>
+
+</tr>
+
+</body>
+</html>

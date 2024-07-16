@@ -18,7 +18,7 @@ import java.util.List;
 public class Flight {
 
     @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+  //  @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id ;
 
     @ManyToOne
@@ -43,6 +43,15 @@ public class Flight {
    @JoinColumn(name= "Flight_id")
    List<Tickets> ticketsList = new ArrayList<>();
 
-    public Flight(String id, Airport origin_airport, Airport destination_airport, Airline_Company comp, LocalDateTime parse, LocalDateTime parse1, int remaining_tickets) {
+
+    public Flight(String id, Airport origin_airport, Airport destination_airport, Airline_Company airline_company, LocalDateTime departure_date, LocalDateTime landing_date, int remaining_tickets) {
+        this.id = id;
+        this.origin_airport = origin_airport;
+        this.destination_airport = destination_airport;
+        this.airline_company = airline_company;
+        this.departure_date = departure_date;
+        this.landing_date = landing_date;
+        this.remaining_tickets = remaining_tickets;
     }
 }
+
